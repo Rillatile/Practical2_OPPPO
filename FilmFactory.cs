@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace Practical2_OPPPO.Films.Factory
@@ -9,7 +10,7 @@ namespace Practical2_OPPPO.Films.Factory
         public static Film CreateFilm(int lineNumber, string data)
         {
             string[] parameters = data.Split(';');
-            const int parametersCount = 3;
+            const int parametersCount = 4;
 
             if (parameters.Length != parametersCount)
                 throw new ArgumentException($"Incorrect input data in line {lineNumber}: {data}");
@@ -17,11 +18,12 @@ namespace Practical2_OPPPO.Films.Factory
             switch (parameters[1].ToLower())
             {
                 case FilmType.Feature:
-                    return new FeatureFilm(parameters[0], parameters[2]);
+                    return new FeatureFilm(parameters[0], parameters[2], float.Parse(parameters[3], CultureInfo.InvariantCulture));
                 case FilmType.Cartoon:
-                    return new CartoonFilm(parameters[0], GetCartoonType(lineNumber, parameters[2]));
+                    return new CartoonFilm(parameters[0], GetCartoonType(lineNumber, parameters[2]),
+                        float.Parse(parameters[3], CultureInfo.InvariantCulture));
                 case FilmType.Horror:
-                    return new HorrorFilm(parameters[0], parameters[2]);
+                    return new HorrorFilm(parameters[0], parameters[2], float.Parse(parameters[3], CultureInfo.InvariantCulture));
                 default:
                     throw new ArgumentException($"Incorrect type of film in line {lineNumber}: {parameters[1]}");
             }

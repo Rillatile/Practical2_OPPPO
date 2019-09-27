@@ -7,15 +7,17 @@ namespace Practical2_OPPPO.Films
     class Film
     {
         public string Title { get; private set; }
+        public float Rating { get; private set; }
 
-        public Film(string title)
+        public Film(string title, float rating)
         {
             Title = title;
+            Rating = rating;
         }
 
         public override string ToString()
         {
-            return $"Title: {Title}";
+            return $"Title: {Title}, rating: {Rating}";
         }
     }
 }
