@@ -46,7 +46,11 @@ namespace Practical2_OPPPO
                 }
             }
 
+            Predicate<Film> ratingLessThanSeven = (Film film) => { return film.Rating < 7.0f; };
+
+            films.Remove(ratingLessThanSeven);
             films.Sort();
+
             i = 0;
             File.WriteAllText(outFilePath, "");
 

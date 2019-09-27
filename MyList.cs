@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Practical2_OPPPO.Films;
 using Practical2_OPPPO.Collections.Entrails;
 
@@ -64,6 +65,40 @@ namespace Practical2_OPPPO.Collections
 
                 if (!flag) break;
             }
+        }
+
+        public void Remove(Predicate<Film> predicate)
+        {
+            if (Count == 0) return;
+
+            Node current = _first;
+            Node previous = _last;
+            int counter = 0;
+            int startSize = Count;
+
+            do
+            {
+                if (predicate(current.Value))
+                {
+                    previous.Next = current.Next;
+                    current = previous.Next;
+
+                    if (previous == _last)
+                        _first = previous.Next;
+
+                    if (current == _first)
+                        _last = previous;
+
+                    Count--;
+                }
+                else
+                {
+                    previous = current;
+                    current = current.Next;
+                }
+
+                counter++;
+            } while (counter != startSize);
         }
 
         public IEnumerator GetEnumerator()
