@@ -9,6 +9,14 @@ namespace Practical2_OPPPO.Films
         public string Title { get; private set; }
         public float Rating { get; private set; }
 
+        public int TitleLength
+        {
+            get
+            {
+                return Title.Length;
+            }
+        }
+
         public Film(string title, float rating)
         {
             Title = title;
