@@ -1,6 +1,6 @@
 ﻿namespace Practical2_OPPPO.Collections
 {
-    enum SortType : byte
+    public enum SortType : byte
     {
         Ascending,
         Descending

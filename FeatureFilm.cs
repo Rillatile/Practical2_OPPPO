@@ -1,6 +1,6 @@
 ﻿namespace Practical2_OPPPO.Films
 {
-    class FeatureFilm : Film
+    public class FeatureFilm : Film
     {
         public string Producer { get; private set; }
 

@@ -1,6 +1,6 @@
 ﻿namespace Practical2_OPPPO.Films
 {
-    static class FilmType
+    public static class FilmType
     {
         public const string Feature = "feature";
 

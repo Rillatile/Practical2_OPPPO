@@ -1,6 +1,6 @@
 ﻿namespace Practical2_OPPPO.Films
 {
-    class Film
+    public class Film
     {
         public string Title { get; private set; }
         public float Rating { get; private set; }

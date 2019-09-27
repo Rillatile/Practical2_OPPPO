@@ -5,7 +5,7 @@ using Practical2_OPPPO.Collections.Entrails;
 
 namespace Practical2_OPPPO.Collections
 {
-    class MyList : IEnumerable
+    public class MyList : IEnumerable
     {
         private Node _first;
         private Node _last;
@@ -57,6 +57,7 @@ namespace Practical2_OPPPO.Collections
 
                         n1.Value = n2.Value;
                         n2.Value = temp;
+                        flag = true;
                     }
 
                     n1 = n2;
