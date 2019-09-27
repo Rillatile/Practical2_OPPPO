@@ -20,6 +20,8 @@ namespace Practical2_OPPPO.Films.Factory
                     return new FeatureFilm(parameters[0], parameters[2]);
                 case FilmType.Cartoon:
                     return new CartoonFilm(parameters[0], GetCartoonType(lineNumber, parameters[2]));
+                case FilmType.Horror:
+                    return new HorrorFilm(parameters[0], parameters[2]);
                 default:
                     throw new ArgumentException($"Incorrect type of film in line {lineNumber}: {parameters[1]}");
             }
