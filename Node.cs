@@ -1,18 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Practical2_OPPPO.Films;
 
 namespace Practical2_OPPPO.Collections.Entrails
 {
-    class Node<T>
+    class Node
     {
-        public T Value { get; private set; }
-        public Node<T> Next { get; set; }
+        public Film Value { get; set; }
+        public Node Next { get; set; }
 
-        public Node(T value)
+        public Node(Film value)
         {
             Value = value;
             Next = null;
         }
+
+        public static bool operator >(Node n1, Node n2) => n1.Value.Rating > n2.Value.Rating;
+
+        public static bool operator <(Node n1, Node n2) => !(n1 > n2);
     }
 }

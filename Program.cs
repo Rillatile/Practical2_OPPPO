@@ -31,7 +31,7 @@ namespace Practical2_OPPPO
                 return;
             }
 
-            MyList<Film> films = new MyList<Film>();
+            MyList films = new MyList();
             int i = 0;
 
             foreach (string data in lines)
@@ -46,6 +46,7 @@ namespace Practical2_OPPPO
                 }
             }
 
+            films.Sort();
             i = 0;
             File.WriteAllText(outFilePath, "");
 

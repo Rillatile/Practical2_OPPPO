@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Practical2_OPPPO.Films
+﻿namespace Practical2_OPPPO.Films
 {
     class Film
     {
